@@ -7,9 +7,6 @@
 #include "ssd1306.h"
 #include <stdio.h>
 
-#define BUTTON_1_GPIO 40
-#define BUTTON_2_GPIO 38
-
 #define PADDLE_WIDTH 30
 #define PADDLE_HEIGHT 3
 #define PADDLE_Y (64 - 5)

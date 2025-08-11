@@ -65,9 +65,8 @@ void app_main(void) {
 
     ESP_LOGI(TAG, "SISTEMA INICIADO");
 
-    MenuOption current_option = MENU_OPTION_DODGE;
-
     while (1) {
+        MenuOption current_option = menu_get_selected_option();
         menu_update(current_option);
 
         if (menu_option_selected()) {

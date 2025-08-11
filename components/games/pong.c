@@ -41,7 +41,7 @@ void start_paddle_pong_game(void) {
             ssd1306_draw_rect(2, 2, 124, 60, false);
             ssd1306_draw_string(20, 20, "GAME OVER");
             char score_text[20];
-            snprintf(score_text, sizeof(score_text), "ESCORE: %d", score);
+            snprintf(score_text, sizeof(score_text), "SCORE:%d", score);
             ssd1306_draw_string(20, 35, score_text);
             ssd1306_draw_string(5, 50, "PRESS ANY BUTTON");
             ssd1306_update_display();
@@ -107,12 +107,10 @@ void start_paddle_pong_game(void) {
             }
         }
         
-        // Desenhar tudo
         ssd1306_clear_buffer();
         draw_ball(&ball);
         draw_paddle(&paddle);
         
-        // Mostrar pontuação e vidas
         char score_text[20];
         snprintf(score_text, sizeof(score_text), "SCORE:%d", score);
         ssd1306_draw_string(5, 5, score_text);
