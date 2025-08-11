@@ -45,14 +45,12 @@ bool is_valid_move(int x, int y) {
 void start_tilt_maze_game(void) {
     play_level_up();
     
-    // Mostrar tela de calibração
     ssd1306_clear_buffer();
     ssd1306_draw_string(15, 10, "CALIBRANDO...");
     ssd1306_draw_string(10, 25, "MANTENHA PARADO");
     ssd1306_draw_string(25, 40, "3 SEGUNDOS");
     ssd1306_update_display();
     
-    // Calibração do MPU6050
     mpu6050_data_t data;
     float sum_x = 0, sum_y = 0;
     int samples = 100;

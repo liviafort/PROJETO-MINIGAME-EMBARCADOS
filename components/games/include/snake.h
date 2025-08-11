@@ -7,6 +7,7 @@
 #include "mpu6050.h"
 #include "ssd1306.h"
 #include "buzzer.h"
+#include <math.h>
 
 #define MAX_SNAKE_SEGMENTS 50
 #define INITIAL_SNAKE_SPEED 200

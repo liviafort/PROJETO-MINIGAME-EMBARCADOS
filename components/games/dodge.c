@@ -38,7 +38,6 @@ bool check_collision(Block *b) {
 void control_player_with_gyro(void) {
     mpu6050_data_t data;
     
-    // Usar mpu6050_read_all em vez de funções separadas
     bool data_ok = (mpu6050_read_all(&data) == ESP_OK);
     
     if (data_ok) {
@@ -102,7 +101,6 @@ void show_calibration_screen(void) {
     ssd1306_update_display();
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     
-    // Calibração do MPU6050
     mpu6050_data_t data;
     float sum_x = 0, sum_y = 0;
     int samples = 100;
