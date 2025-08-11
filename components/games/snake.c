@@ -218,7 +218,7 @@ void start_snake_tilt_game(void) {
             ssd1306_update_display();
             
             while (1) {
-                if (button_get_event(&btn_event) == ESP_OK) {
+                if (gpio_get_level(40) == 0 || gpio_get_level(38) == 0) {
                     vTaskDelay(500 / portTICK_PERIOD_MS);
                     return;
                 }
@@ -239,9 +239,9 @@ void start_snake_tilt_game(void) {
             }
 
             if (accel_y > threshold && snake.direction != 0) {
-                snake.next_direction = 2; // Baixo
+                snake.next_direction = 0; // Baixo
             } else if (accel_y < -threshold && snake.direction != 2) {
-                snake.next_direction = 0; // Cima
+                snake.next_direction = 2; // Cima
             }
         }
         

@@ -143,7 +143,7 @@ void start_dodge_blocks_game(void) {
             ssd1306_update_display();
             
             while (1) {
-                if (button_get_event(&btn_event) == ESP_OK) {
+                if (gpio_get_level(40) == 0 || gpio_get_level(38) == 0) {
                     vTaskDelay(500 / portTICK_PERIOD_MS);
                     return;
                 }

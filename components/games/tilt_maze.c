@@ -92,7 +92,7 @@ void start_tilt_maze_game(void) {
             ssd1306_update_display();
             
             while (1) {
-                if (button_get_event(&btn_event) == ESP_OK) {
+                if (gpio_get_level(40) == 0 || gpio_get_level(38) == 0) {
                     vTaskDelay(500 / portTICK_PERIOD_MS);
                     return;
                 }
@@ -115,8 +115,8 @@ void start_tilt_maze_game(void) {
                 if (accel_x > 0.2) new_x++;
                 else if (accel_x < -0.2) new_x--;
             } else {
-                if (accel_y > 0.2) new_y++;
-                else if (accel_y < -0.2) new_y--;
+                if (accel_y > 0.2) new_y--;
+                else if (accel_y < -0.2) new_y++;
             }
             
             if ((new_x != player.x || new_y != player.y) && is_valid_move(new_x, new_y)) {

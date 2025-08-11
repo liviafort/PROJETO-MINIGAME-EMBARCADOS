@@ -9,10 +9,10 @@
 #include "buzzer.h"
 #include <math.h>
 
-#define MAX_SNAKE_SEGMENTS 50
-#define INITIAL_SNAKE_SPEED 200
-#define MIN_SNAKE_SPEED 80
-#define SPEED_DECREMENT 10
+#define MAX_SNAKE_SEGMENTS 120
+#define INITIAL_SNAKE_SPEED 400
+#define MIN_SNAKE_SPEED 200
+#define SPEED_DECREMENT 2
 #define MAX_LIVES 3
 
 extern float accel_offset_x;
